@@ -18,5 +18,4 @@ Khi không có vạch thì IR nhận sẽ nhận được tín hiệu từ IR ph
 Khi có vạch IR nhận không nhận được tín hiệu từ IR phát
 # Demo
 
-[![Watch the video](![1](https://user-images.githubusercontent.com/67089995/176743694-0d32e567-f0b3-44de-84c1-7b63ee6d9949.png)
-)](https://youtu.be/d63bywc6ar8)
+[![Watch the video](https://user-images.githubusercontent.com/67089995/176743694-0d32e567-f0b3-44de-84c1-7b63ee6d9949.png)](https://youtu.be/d63bywc6ar8)
