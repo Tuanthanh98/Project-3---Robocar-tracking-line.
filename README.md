@@ -17,9 +17,11 @@ Khi không có vạch thì IR nhận sẽ nhận được tín hiệu từ IR ph
 ![Khi có vạch](https://hackster.imgix.net/uploads/attachments/496035/Concept-of-Black-Line-Follo.gif?auto=compress&gifq=35&w=1280&h=960&fit=max)  
 Khi có vạch IR nhận không nhận được tín hiệu từ IR phát  
   
-Xe có thể dừng lại khi gặp vật cản. 
-![Khi có vật cản](https://user-images.githubusercontent.com/67089995/176749051-c77ae928-1c6e-4f36-8578-f7765234b133.jpg)
-)  
+Xe có thể dừng lại khi gặp vật cản: 
+- khi đến khoảng cách nhất định, cảm biến SR04 sẽ do được, so sánh với khoảng cách cài sẵn trong chương trình. Khi đó xe sẽ dừng lại
+- Khi ko có vật sẽ tiếp tục đi.
+  ![Khi có vật cản](https://user-images.githubusercontent.com/67089995/176749051-c77ae928-1c6e-4f36-8578-f7765234b133.jpg)
+
 # Demo
 
 Click vào Ảnh để xem demo - >> https://youtu.be/d63bywc6ar8  
