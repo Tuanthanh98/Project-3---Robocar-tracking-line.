@@ -19,7 +19,7 @@ Khi có vạch IR nhận không nhận được tín hiệu từ IR phát
   
 Xe có thể dừng lại khi gặp vật cản: 
 - khi đến khoảng cách nhất định, cảm biến SR04 sẽ do được, so sánh với khoảng cách cài sẵn trong chương trình. Khi đó xe sẽ dừng lại
-- Khi ko có vật sẽ tiếp tục đi.
+- Khi ko có vật sẽ tiếp tục đi.   
   ![Khi có vật cản](https://user-images.githubusercontent.com/67089995/176749051-c77ae928-1c6e-4f36-8578-f7765234b133.jpg)
 
 # Demo
