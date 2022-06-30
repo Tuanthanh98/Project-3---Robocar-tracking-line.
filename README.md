@@ -1,4 +1,4 @@
-# Project-3---Robocar-tracking-line.
+# Project-3 - Robocar tracking line.
 Robocar is following black line
 # Mô tả 
 Thực hiện được những yêu cầu sau:  
@@ -16,4 +16,8 @@ Khi không có vạch thì IR nhận sẽ nhận được tín hiệu từ IR ph
 ![Khi có vạch](https://hackster.imgix.net/uploads/attachments/496035/Concept-of-Black-Line-Follo.gif?auto=compress&gifq=35&w=1280&h=960&fit=max)  
 Khi có vạch IR nhận không nhận được tín hiệu từ IR phát
 # Demo 
-[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+[![Watch the video](
+
+Uploading VID_20201225_134115.mp4…
+
+)
