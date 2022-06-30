@@ -1,0 +1,2038 @@
+CCS PCM C Compiler, Version 5.025, 31797               28-Jun-21 17:34
+
+               Filename:   D:\Documents\DOAN3\PROJECT3\Project3.lst
+
+               ROM used:   1404 words (18%)
+                           Largest free fragment is 2048
+               RAM used:   28 (8%) at main() level
+                           44 (12%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
+               Stack size: 7
+
+*
+0000:  NOP
+0001:  MOVLW  05
+0002:  MOVWF  0A
+0003:  GOTO   546
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BCF    03.7
+0016:  BCF    03.5
+0017:  MOVLW  8C
+0018:  MOVWF  04
+0019:  BTFSS  00.0
+001A:  GOTO   01D
+001B:  BTFSC  0C.0
+001C:  GOTO   02E
+001D:  MOVF   22,W
+001E:  MOVWF  04
+001F:  MOVF   23,W
+0020:  MOVWF  77
+0021:  MOVF   24,W
+0022:  MOVWF  78
+0023:  MOVF   25,W
+0024:  MOVWF  79
+0025:  MOVF   26,W
+0026:  MOVWF  7A
+0027:  MOVF   20,W
+0028:  MOVWF  0A
+0029:  SWAPF  21,W
+002A:  MOVWF  03
+002B:  SWAPF  7F,F
+002C:  SWAPF  7F,W
+002D:  RETFIE
+002E:  BCF    0A.3
+002F:  BCF    0A.4
+0030:  GOTO   031
+.................... #include <Project3.h> 
+.................... #include <16F877A.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+*
+004E:  MOVF   37,W
+004F:  BTFSC  03.2
+0050:  GOTO   113
+0051:  MOVWF  43
+0052:  MOVF   3B,W
+0053:  BTFSC  03.2
+0054:  GOTO   113
+0055:  SUBWF  43,F
+0056:  BTFSS  03.0
+0057:  GOTO   05D
+0058:  MOVLW  7F
+0059:  ADDWF  43,F
+005A:  BTFSC  03.0
+005B:  GOTO   113
+005C:  GOTO   063
+005D:  MOVLW  81
+005E:  SUBWF  43,F
+005F:  BTFSS  03.0
+0060:  GOTO   113
+0061:  BTFSC  03.2
+0062:  GOTO   113
+0063:  MOVF   43,W
+0064:  MOVWF  77
+0065:  CLRF   78
+0066:  CLRF   79
+0067:  CLRF   7A
+0068:  CLRF   42
+0069:  MOVF   38,W
+006A:  MOVWF  41
+006B:  BSF    41.7
+006C:  MOVF   39,W
+006D:  MOVWF  40
+006E:  MOVF   3A,W
+006F:  MOVWF  3F
+0070:  MOVLW  19
+0071:  MOVWF  43
+0072:  MOVF   3E,W
+0073:  SUBWF  3F,F
+0074:  BTFSC  03.0
+0075:  GOTO   086
+0076:  MOVLW  01
+0077:  SUBWF  40,F
+0078:  BTFSC  03.0
+0079:  GOTO   086
+007A:  SUBWF  41,F
+007B:  BTFSC  03.0
+007C:  GOTO   086
+007D:  SUBWF  42,F
+007E:  BTFSC  03.0
+007F:  GOTO   086
+0080:  INCF   42,F
+0081:  INCF   41,F
+0082:  INCF   40,F
+0083:  MOVF   3E,W
+0084:  ADDWF  3F,F
+0085:  GOTO   0B8
+0086:  MOVF   3D,W
+0087:  SUBWF  40,F
+0088:  BTFSC  03.0
+0089:  GOTO   0A1
+008A:  MOVLW  01
+008B:  SUBWF  41,F
+008C:  BTFSC  03.0
+008D:  GOTO   0A1
+008E:  SUBWF  42,F
+008F:  BTFSC  03.0
+0090:  GOTO   0A1
+0091:  INCF   42,F
+0092:  INCF   41,F
+0093:  MOVF   3D,W
+0094:  ADDWF  40,F
+0095:  MOVF   3E,W
+0096:  ADDWF  3F,F
+0097:  BTFSS  03.0
+0098:  GOTO   0B8
+0099:  INCF   40,F
+009A:  BTFSS  03.2
+009B:  GOTO   0B8
+009C:  INCF   41,F
+009D:  BTFSS  03.2
+009E:  GOTO   0B8
+009F:  INCF   42,F
+00A0:  GOTO   0B8
+00A1:  MOVF   3C,W
+00A2:  IORLW  80
+00A3:  SUBWF  41,F
+00A4:  BTFSC  03.0
+00A5:  GOTO   0B7
+00A6:  MOVLW  01
+00A7:  SUBWF  42,F
+00A8:  BTFSC  03.0
+00A9:  GOTO   0B7
+00AA:  INCF   42,F
+00AB:  MOVF   3C,W
+00AC:  IORLW  80
+00AD:  ADDWF  41,F
+00AE:  MOVF   3D,W
+00AF:  ADDWF  40,F
+00B0:  BTFSS  03.0
+00B1:  GOTO   095
+00B2:  INCF   41,F
+00B3:  BTFSS  03.2
+00B4:  GOTO   095
+00B5:  INCF   42,F
+00B6:  GOTO   095
+00B7:  BSF    7A.0
+00B8:  DECFSZ 43,F
+00B9:  GOTO   0BB
+00BA:  GOTO   0C6
+00BB:  BCF    03.0
+00BC:  RLF    3F,F
+00BD:  RLF    40,F
+00BE:  RLF    41,F
+00BF:  RLF    42,F
+00C0:  BCF    03.0
+00C1:  RLF    7A,F
+00C2:  RLF    79,F
+00C3:  RLF    78,F
+00C4:  RLF    44,F
+00C5:  GOTO   072
+00C6:  BTFSS  44.0
+00C7:  GOTO   0CE
+00C8:  BCF    03.0
+00C9:  RRF    78,F
+00CA:  RRF    79,F
+00CB:  RRF    7A,F
+00CC:  RRF    44,F
+00CD:  GOTO   0D1
+00CE:  DECF   77,F
+00CF:  BTFSC  03.2
+00D0:  GOTO   113
+00D1:  BTFSC  44.7
+00D2:  GOTO   0FA
+00D3:  BCF    03.0
+00D4:  RLF    3F,F
+00D5:  RLF    40,F
+00D6:  RLF    41,F
+00D7:  RLF    42,F
+00D8:  MOVF   3E,W
+00D9:  SUBWF  3F,F
+00DA:  BTFSC  03.0
+00DB:  GOTO   0E6
+00DC:  MOVLW  01
+00DD:  SUBWF  40,F
+00DE:  BTFSC  03.0
+00DF:  GOTO   0E6
+00E0:  SUBWF  41,F
+00E1:  BTFSC  03.0
+00E2:  GOTO   0E6
+00E3:  SUBWF  42,F
+00E4:  BTFSS  03.0
+00E5:  GOTO   109
+00E6:  MOVF   3D,W
+00E7:  SUBWF  40,F
+00E8:  BTFSC  03.0
+00E9:  GOTO   0F1
+00EA:  MOVLW  01
+00EB:  SUBWF  41,F
+00EC:  BTFSC  03.0
+00ED:  GOTO   0F1
+00EE:  SUBWF  42,F
+00EF:  BTFSS  03.0
+00F0:  GOTO   109
+00F1:  MOVF   3C,W
+00F2:  IORLW  80
+00F3:  SUBWF  41,F
+00F4:  BTFSC  03.0
+00F5:  GOTO   0FA
+00F6:  MOVLW  01
+00F7:  SUBWF  42,F
+00F8:  BTFSS  03.0
+00F9:  GOTO   109
+00FA:  INCF   7A,F
+00FB:  BTFSS  03.2
+00FC:  GOTO   109
+00FD:  INCF   79,F
+00FE:  BTFSS  03.2
+00FF:  GOTO   109
+0100:  INCF   78,F
+0101:  BTFSS  03.2
+0102:  GOTO   109
+0103:  INCF   77,F
+0104:  BTFSC  03.2
+0105:  GOTO   113
+0106:  RRF    78,F
+0107:  RRF    79,F
+0108:  RRF    7A,F
+0109:  MOVF   38,W
+010A:  MOVWF  43
+010B:  MOVF   3C,W
+010C:  XORWF  43,F
+010D:  BTFSS  43.7
+010E:  GOTO   111
+010F:  BSF    78.7
+0110:  GOTO   117
+0111:  BCF    78.7
+0112:  GOTO   117
+0113:  CLRF   77
+0114:  CLRF   78
+0115:  CLRF   79
+0116:  CLRF   7A
+0117:  RETURN
+*
+0136:  MOVLW  8E
+0137:  MOVWF  77
+0138:  MOVF   38,W
+0139:  MOVWF  78
+013A:  MOVF   37,W
+013B:  MOVWF  79
+013C:  CLRF   7A
+013D:  MOVF   78,F
+013E:  BTFSS  03.2
+013F:  GOTO   14A
+0140:  MOVF   79,W
+0141:  MOVWF  78
+0142:  CLRF   79
+0143:  MOVLW  08
+0144:  SUBWF  77,F
+0145:  MOVF   78,F
+0146:  BTFSS  03.2
+0147:  GOTO   14A
+0148:  CLRF   77
+0149:  GOTO   152
+014A:  BCF    03.0
+014B:  BTFSC  78.7
+014C:  GOTO   151
+014D:  RLF    79,F
+014E:  RLF    78,F
+014F:  DECF   77,F
+0150:  GOTO   14A
+0151:  BCF    78.7
+*
+016E:  MOVLW  B6
+016F:  MOVWF  77
+0170:  CLRF   7A
+0171:  CLRF   79
+0172:  CLRF   78
+0173:  MOVF   37,W
+0174:  IORWF  38,W
+0175:  IORWF  39,W
+0176:  IORWF  3A,W
+0177:  BTFSS  03.2
+0178:  GOTO   17B
+0179:  CLRF   77
+017A:  GOTO   188
+017B:  BCF    03.0
+017C:  BTFSC  78.7
+017D:  GOTO   187
+017E:  RLF    37,F
+017F:  RLF    38,F
+0180:  RLF    39,F
+0181:  RLF    3A,F
+0182:  RLF    7A,F
+0183:  RLF    79,F
+0184:  RLF    78,F
+0185:  DECFSZ 77,F
+0186:  GOTO   17B
+0187:  BCF    78.7
+*
+0199:  MOVLW  80
+019A:  BTFSC  03.1
+019B:  XORWF  3C,F
+019C:  CLRF   41
+019D:  CLRF   42
+019E:  MOVF   38,W
+019F:  MOVWF  40
+01A0:  MOVF   3C,W
+01A1:  XORWF  40,F
+01A2:  MOVF   37,W
+01A3:  BTFSC  03.2
+01A4:  GOTO   289
+01A5:  MOVWF  3F
+01A6:  MOVWF  77
+01A7:  MOVF   3B,W
+01A8:  BTFSC  03.2
+01A9:  GOTO   292
+01AA:  SUBWF  3F,F
+01AB:  BTFSC  03.2
+01AC:  GOTO   22E
+01AD:  BTFSS  03.0
+01AE:  GOTO   1EC
+01AF:  MOVF   3C,W
+01B0:  MOVWF  45
+01B1:  BSF    45.7
+01B2:  MOVF   3D,W
+01B3:  MOVWF  44
+01B4:  MOVF   3E,W
+01B5:  MOVWF  43
+01B6:  CLRF   42
+01B7:  BCF    03.0
+01B8:  RRF    45,F
+01B9:  RRF    44,F
+01BA:  RRF    43,F
+01BB:  RRF    42,F
+01BC:  DECFSZ 3F,F
+01BD:  GOTO   1B6
+01BE:  BTFSS  40.7
+01BF:  GOTO   1C3
+01C0:  BSF    41.0
+01C1:  GOTO   2A6
+01C2:  BCF    41.0
+01C3:  BCF    3F.0
+01C4:  BSF    41.4
+01C5:  MOVLW  3A
+01C6:  MOVWF  04
+01C7:  BCF    03.7
+01C8:  GOTO   2BB
+01C9:  BCF    41.4
+01CA:  BTFSC  40.7
+01CB:  GOTO   1D6
+01CC:  BTFSS  3F.0
+01CD:  GOTO   1E1
+01CE:  RRF    45,F
+01CF:  RRF    44,F
+01D0:  RRF    43,F
+01D1:  RRF    42,F
+01D2:  INCF   77,F
+01D3:  BTFSC  03.2
+01D4:  GOTO   2A1
+01D5:  GOTO   1E1
+01D6:  BTFSC  45.7
+01D7:  GOTO   1E4
+01D8:  BCF    03.0
+01D9:  RLF    42,F
+01DA:  RLF    43,F
+01DB:  RLF    44,F
+01DC:  RLF    45,F
+01DD:  DECF   77,F
+01DE:  BTFSC  03.2
+01DF:  GOTO   2A1
+01E0:  GOTO   1D6
+01E1:  BSF    41.6
+01E2:  GOTO   24E
+01E3:  BCF    41.6
+01E4:  MOVF   38,W
+01E5:  MOVWF  40
+01E6:  BTFSS  40.7
+01E7:  GOTO   1EA
+01E8:  BSF    45.7
+01E9:  GOTO   29A
+01EA:  BCF    45.7
+01EB:  GOTO   29A
+01EC:  MOVF   3B,W
+01ED:  MOVWF  3F
+01EE:  MOVWF  77
+01EF:  MOVF   37,W
+01F0:  SUBWF  3F,F
+01F1:  MOVF   38,W
+01F2:  MOVWF  45
+01F3:  BSF    45.7
+01F4:  MOVF   39,W
+01F5:  MOVWF  44
+01F6:  MOVF   3A,W
+01F7:  MOVWF  43
+01F8:  CLRF   42
+01F9:  BCF    03.0
+01FA:  RRF    45,F
+01FB:  RRF    44,F
+01FC:  RRF    43,F
+01FD:  RRF    42,F
+01FE:  DECFSZ 3F,F
+01FF:  GOTO   1F8
+0200:  BTFSS  40.7
+0201:  GOTO   205
+0202:  BSF    41.1
+0203:  GOTO   2A6
+0204:  BCF    41.1
+0205:  BCF    3F.0
+0206:  BSF    41.5
+0207:  MOVLW  3E
+0208:  MOVWF  04
+0209:  BCF    03.7
+020A:  GOTO   2BB
+020B:  BCF    41.5
+020C:  BTFSC  40.7
+020D:  GOTO   218
+020E:  BTFSS  3F.0
+020F:  GOTO   223
+0210:  RRF    45,F
+0211:  RRF    44,F
+0212:  RRF    43,F
+0213:  RRF    42,F
+0214:  INCF   77,F
+0215:  BTFSC  03.2
+0216:  GOTO   2A1
+0217:  GOTO   223
+0218:  BTFSC  45.7
+0219:  GOTO   226
+021A:  BCF    03.0
+021B:  RLF    42,F
+021C:  RLF    43,F
+021D:  RLF    44,F
+021E:  RLF    45,F
+021F:  DECF   77,F
+0220:  BTFSC  03.2
+0221:  GOTO   2A1
+0222:  GOTO   218
+0223:  BSF    41.7
+0224:  GOTO   24E
+0225:  BCF    41.7
+0226:  MOVF   3C,W
+0227:  MOVWF  40
+0228:  BTFSS  40.7
+0229:  GOTO   22C
+022A:  BSF    45.7
+022B:  GOTO   29A
+022C:  BCF    45.7
+022D:  GOTO   29A
+022E:  MOVF   3C,W
+022F:  MOVWF  45
+0230:  BSF    45.7
+0231:  MOVF   3D,W
+0232:  MOVWF  44
+0233:  MOVF   3E,W
+0234:  MOVWF  43
+0235:  BTFSS  40.7
+0236:  GOTO   23B
+0237:  BCF    45.7
+0238:  BSF    41.2
+0239:  GOTO   2A6
+023A:  BCF    41.2
+023B:  CLRF   42
+023C:  BCF    3F.0
+023D:  MOVLW  3A
+023E:  MOVWF  04
+023F:  BCF    03.7
+0240:  GOTO   2BB
+0241:  BTFSC  40.7
+0242:  GOTO   264
+0243:  MOVF   38,W
+0244:  MOVWF  40
+0245:  BTFSS  3F.0
+0246:  GOTO   24E
+0247:  RRF    45,F
+0248:  RRF    44,F
+0249:  RRF    43,F
+024A:  RRF    42,F
+024B:  INCF   77,F
+024C:  BTFSC  03.2
+024D:  GOTO   2A1
+024E:  BTFSS  42.7
+024F:  GOTO   25F
+0250:  INCF   43,F
+0251:  BTFSS  03.2
+0252:  GOTO   25F
+0253:  INCF   44,F
+0254:  BTFSS  03.2
+0255:  GOTO   25F
+0256:  INCF   45,F
+0257:  BTFSS  03.2
+0258:  GOTO   25F
+0259:  RRF    45,F
+025A:  RRF    44,F
+025B:  RRF    43,F
+025C:  INCF   77,F
+025D:  BTFSC  03.2
+025E:  GOTO   2A1
+025F:  BTFSC  41.6
+0260:  GOTO   1E3
+0261:  BTFSC  41.7
+0262:  GOTO   225
+0263:  GOTO   283
+0264:  MOVLW  80
+0265:  XORWF  45,F
+0266:  BTFSS  45.7
+0267:  GOTO   26C
+0268:  GOTO   2A6
+0269:  MOVF   3C,W
+026A:  MOVWF  40
+026B:  GOTO   279
+026C:  MOVF   38,W
+026D:  MOVWF  40
+026E:  MOVF   45,F
+026F:  BTFSS  03.2
+0270:  GOTO   279
+0271:  MOVF   44,F
+0272:  BTFSS  03.2
+0273:  GOTO   279
+0274:  MOVF   43,F
+0275:  BTFSS  03.2
+0276:  GOTO   279
+0277:  CLRF   77
+0278:  GOTO   29A
+0279:  BTFSC  45.7
+027A:  GOTO   283
+027B:  BCF    03.0
+027C:  RLF    42,F
+027D:  RLF    43,F
+027E:  RLF    44,F
+027F:  RLF    45,F
+0280:  DECFSZ 77,F
+0281:  GOTO   279
+0282:  GOTO   2A1
+0283:  BTFSS  40.7
+0284:  GOTO   287
+0285:  BSF    45.7
+0286:  GOTO   29A
+0287:  BCF    45.7
+0288:  GOTO   29A
+0289:  MOVF   3B,W
+028A:  MOVWF  77
+028B:  MOVF   3C,W
+028C:  MOVWF  45
+028D:  MOVF   3D,W
+028E:  MOVWF  44
+028F:  MOVF   3E,W
+0290:  MOVWF  43
+0291:  GOTO   29A
+0292:  MOVF   37,W
+0293:  MOVWF  77
+0294:  MOVF   38,W
+0295:  MOVWF  45
+0296:  MOVF   39,W
+0297:  MOVWF  44
+0298:  MOVF   3A,W
+0299:  MOVWF  43
+029A:  MOVF   45,W
+029B:  MOVWF  78
+029C:  MOVF   44,W
+029D:  MOVWF  79
+029E:  MOVF   43,W
+029F:  MOVWF  7A
+02A0:  GOTO   2D9
+02A1:  CLRF   77
+02A2:  CLRF   78
+02A3:  CLRF   79
+02A4:  CLRF   7A
+02A5:  GOTO   2D9
+02A6:  CLRF   42
+02A7:  COMF   43,F
+02A8:  COMF   44,F
+02A9:  COMF   45,F
+02AA:  COMF   42,F
+02AB:  INCF   42,F
+02AC:  BTFSS  03.2
+02AD:  GOTO   2B4
+02AE:  INCF   43,F
+02AF:  BTFSS  03.2
+02B0:  GOTO   2B4
+02B1:  INCF   44,F
+02B2:  BTFSC  03.2
+02B3:  INCF   45,F
+02B4:  BTFSC  41.0
+02B5:  GOTO   1C2
+02B6:  BTFSC  41.1
+02B7:  GOTO   204
+02B8:  BTFSC  41.2
+02B9:  GOTO   23A
+02BA:  GOTO   269
+02BB:  MOVF   00,W
+02BC:  ADDWF  43,F
+02BD:  BTFSS  03.0
+02BE:  GOTO   2C5
+02BF:  INCF   44,F
+02C0:  BTFSS  03.2
+02C1:  GOTO   2C5
+02C2:  INCF   45,F
+02C3:  BTFSC  03.2
+02C4:  BSF    3F.0
+02C5:  DECF   04,F
+02C6:  MOVF   00,W
+02C7:  ADDWF  44,F
+02C8:  BTFSS  03.0
+02C9:  GOTO   2CD
+02CA:  INCF   45,F
+02CB:  BTFSC  03.2
+02CC:  BSF    3F.0
+02CD:  DECF   04,F
+02CE:  MOVF   00,W
+02CF:  BTFSS  00.7
+02D0:  XORLW  80
+02D1:  ADDWF  45,F
+02D2:  BTFSC  03.0
+02D3:  BSF    3F.0
+02D4:  BTFSC  41.4
+02D5:  GOTO   1C9
+02D6:  BTFSC  41.5
+02D7:  GOTO   20B
+02D8:  GOTO   241
+*
+0317:  MOVLW  8E
+0318:  MOVWF  77
+0319:  MOVF   37,W
+031A:  SUBWF  77,F
+031B:  MOVF   38,W
+031C:  MOVWF  79
+031D:  MOVF   39,W
+031E:  MOVWF  78
+031F:  BSF    79.7
+0320:  MOVF   77,F
+0321:  BTFSC  03.2
+0322:  GOTO   32E
+0323:  BCF    03.0
+0324:  MOVF   79,F
+0325:  BTFSS  03.2
+0326:  GOTO   32A
+0327:  MOVF   78,F
+0328:  BTFSC  03.2
+0329:  GOTO   32E
+032A:  RRF    79,F
+032B:  RRF    78,F
+032C:  DECFSZ 77,F
+032D:  GOTO   323
+032E:  BTFSS  38.7
+032F:  GOTO   335
+0330:  COMF   78,F
+0331:  COMF   79,F
+0332:  INCF   78,F
+0333:  BTFSC  03.2
+0334:  INCF   79,F
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES WDT                      //Watch Dog Timer 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #device ICD=TRUE 
+.................... #use delay(crystal=20000000,restart_wdt) 
+*
+0036:  MOVLW  37
+0037:  MOVWF  04
+0038:  BCF    03.7
+0039:  MOVF   00,W
+003A:  BTFSC  03.2
+003B:  GOTO   04D
+003C:  MOVLW  06
+003D:  MOVWF  78
+003E:  MOVLW  BF
+003F:  MOVWF  77
+0040:  CLRWDT
+0041:  DECFSZ 77,F
+0042:  GOTO   040
+0043:  DECFSZ 78,F
+0044:  GOTO   03E
+0045:  MOVLW  7A
+0046:  MOVWF  77
+0047:  DECFSZ 77,F
+0048:  GOTO   047
+0049:  GOTO   04A
+004A:  CLRWDT
+004B:  DECFSZ 00,F
+004C:  GOTO   03C
+004D:  RETURN
+.................... #use fast_io(C) 
+.................... #use fast_io(B) 
+.................... #use fast_io(D) 
+....................  
+....................  
+.................... #include <def_877a.h> 
+.................... #define W 0 
+.................... #define F 1 
+....................  
+.................... //----- Register Files------------------------------------------------------ 
+....................  
+.................... #byte INDF =0x00 
+.................... #byte TMR0 =0x01  
+.................... #byte PCL =0x02  
+.................... #byte STATUS =0x03  
+.................... #byte FSR =0x04  
+.................... #byte PORTA =0x05  
+.................... #byte PORTB =0x06  
+.................... #byte PORTC =0x07 
+....................  
+.................... #byte PCLATH =0x0A  
+.................... #byte PIR1 =0x0C 
+.................... #byte PIR2 =0x0D 
+....................  
+.................... #byte TMR1L =0x0E 
+.................... #byte TMR1H =0x0F 
+.................... #byte T1CON =0x10 
+.................... #byte TMR2 =0x11 
+.................... #byte T2CON =0x12 
+....................  
+.................... #byte SSPCON =0x14 
+.................... #byte CCPR1L =0x15 
+.................... #byte CCPR1H =0x16 
+.................... #byte CCP1CON =0x17 
+.................... #byte RCSTA =0x18 
+.................... #byte TXREG =0x19 
+.................... #byte RCREG =0x1A 
+.................... #byte CCPR2L =0x1B 
+.................... #byte CCPR2H =0x1C 
+.................... #byte CCP2CON =0x1D  
+....................  
+.................... #byte ADRESH =0x1E 
+.................... #byte ADCON0 =0x1F 
+....................  
+.................... /* bank 1 registers */ 
+....................  
+.................... #byte OPTION_REG =0x81 
+....................  
+.................... #byte TRISA =0x85 
+.................... #byte TRISB =0x86 
+.................... #byte TRISC =0x87 
+....................  
+.................... #byte PIE1 =0x8C 
+.................... #byte PIE2 =0x8D 
+.................... #byte PCON =0x8E 
+....................  
+.................... #byte SSPCON2 =0x91 
+.................... #byte PR2 =0x92 
+.................... #byte SSPADD =0x93 
+.................... #byte SSPSTAT =0x94 
+....................  
+.................... #byte TXSTA =0x98 
+.................... #byte SPBRG =0x99 
+....................  
+.................... #byte ADRESL =0x9E 
+.................... #byte ADCON1 =0x9F 
+....................  
+.................... /* bank 2 registers */ 
+....................  
+.................... #byte EEDATA =0x010C 
+.................... #byte EEADR =0x010D 
+.................... #byte EEDATH =0x010E 
+.................... #byte EEADRH =0x010F 
+....................  
+.................... /* bank 3 registers */ 
+....................  
+.................... #byte EECON1 =0x018C 
+.................... #byte EECON2 =0x018D 
+....................  
+....................  
+.................... //----- STATUS Bits -------------------------------------------------------- 
+....................  
+.................... // For Assembly Language - Note upper case 
+.................... #define IRP 7 
+.................... #define RP1 6 
+.................... #define RP0 5 
+.................... #define NOT_TO 4 
+.................... #define NOT_PD 3 
+.................... #define Z 2 
+.................... #define DC 1 
+.................... #define C 0 
+....................  
+.................... //----- INTCON Bits for c -------------------------------------------------------- 
+....................  
+.................... #bit gie = 0x0b.7 
+.................... #bit eeie = 0x0b.6 
+.................... #bit t0ie = 0x0b.5 
+.................... #bit inte = 0x0b.4 
+.................... #bit rbie = 0x0b.3 
+.................... #bit t0if = 0x0b.2 
+.................... #bit intf = 0x0b.1 
+.................... #bit rbif = 0x0b.0 
+....................  
+.................... //---------PORTA bits------------------ 
+.................... #bit ra5 =0x05.5 
+.................... #bit ra4 =0x05.4 
+.................... #bit ra3 =0x05.3 
+.................... #bit ra2 =0x05.2 
+.................... #bit ra1 =0x05.1 
+.................... #bit ra0 =0x05.0 
+....................  
+.................... //---------PORTB bits------------------ 
+.................... #bit rb7 =0x06.7 
+.................... #bit rb6 =0x06.6 
+.................... #bit rb5 =0x06.5 
+.................... #bit rb4 =0x06.4 
+.................... #bit rb3 =0x06.3 
+.................... #bit rb2 =0x06.2 
+.................... #bit rb1 =0x06.1 
+.................... #bit rb0 =0x06.0 
+....................  
+.................... //---------PORTC bits------------------ 
+.................... #bit rc7 =0x07.7 
+.................... #bit rc6 =0x07.6 
+.................... #bit rc5 =0x07.5 
+.................... #bit rc4 =0x07.4 
+.................... #bit rc3 =0x07.3 
+.................... #bit rc2 =0x07.2 
+.................... #bit rc1 =0x07.1 
+.................... #bit rc0 =0x07.0 
+....................  
+.................... //----- PIR1 Bits ---------------------------------------------------------- 
+.................... #bit PSPIF =0x0C.7 
+.................... #bit ADIF =0x0C.6 
+.................... #bit RCIF =0x0C.5 
+.................... #bit TXIF =0x0C.4 
+.................... #bit SSPIF =0x0C.3 
+.................... #bit CCP1IF =0x0C.2 
+.................... #bit TMR2IF =0x0C.1 
+.................... #bit TMR1IF =0x0C.0 
+....................  
+.................... //----- PIR2 Bits ---------------------------------------------------------- 
+.................... #bit CMIF =0x0D.6 
+.................... #bit EEIF =0x0D.4 
+.................... #bit BCLIF =0x0D.3 
+.................... #bit CCP2IF =0x0D.0 
+....................  
+.................... //----- T1CON Bits --------------------------------------------------------- 
+.................... #bit T1CKPS1 =0x10.5 
+.................... #bit T1CKPS0 =0x10.4 
+.................... #bit T1OSCEN =0x10.3 
+.................... #bit T1SYNC =0x10.2 
+.................... #bit TMR1CS =0x10.1 
+.................... #bit TMR1ON =0x10.0 
+....................  
+.................... //----- T2CON Bits --------------------------------------------------------- 
+.................... #bit TOUTPS3 =0x12.6 
+.................... #bit TOUTPS2 =0x12.5 
+.................... #bit TOUTPS1 =0x12.4 
+.................... #bit TOUTPS0 =0x12.3 
+.................... #bit TMR2ON =0x12.2 
+.................... #bit T2CKPS1 =0x12.1 
+.................... #bit T2CKPS0 =0x12.0 
+....................  
+.................... //-------------SSPCON bits-------------------------- 
+.................... #bit WCOL =0x14.7 
+.................... #bit SSPOV =0x14.6 
+.................... #bit SSPEN =0x14.5  
+.................... #bit CKP =0x14.4 
+.................... #bit SSPM3 =0x14.3 
+.................... #bit SSPM2 =0x14.2 
+.................... #bit SSPM1 =0x14.1 
+.................... #bit SSPM0 =0x14.0 
+....................  
+.................... //---------------CCP1CON bits-------- 
+.................... #bit CCP1X =0x17.5 
+.................... #bit CCP1Y =0x17.4 
+.................... #bit CCP1M3 =0x17.3 
+.................... #bit CCP1M2 =0x17.2 
+.................... #bit CCP1M1 =0x17.1 
+.................... #bit CCP1M0 =0x17.0 
+....................  
+.................... //---------------RCSTA bits------------------- 
+....................  
+.................... #bit SPEN =0x18.7 
+.................... #bit RX9 =0x18.6 
+.................... #bit SREN =0x18.5 
+.................... #bit CREN =0x18.4 
+.................... #bit ADDEN =0x18.3 
+.................... #bit FERR =0x18.2 
+.................... #bit OERR =0x18.1 
+.................... #bit RX9D =0x18.0 
+....................  
+.................... //-----------------------CCP2CON bits---------- 
+....................  
+.................... #bit CCP2X =0x1D.5 
+.................... #bit CCP2Y =0x1D.4 
+.................... #bit CCP2M3 =0x1D.3 
+.................... #bit CCP2M2 =0x1D.2 
+.................... #bit CCP2M1 =0x1D.1 
+.................... #bit CCP2M0 =0x1D.0 
+....................  
+.................... //----- ADCON0 Bits -------------------------------------------------------- 
+.................... #bit ADCS1 =0x1F.7 
+.................... #bit ADCS0 =0x1F.6 
+.................... #bit CHS2 =0x1F.5  
+.................... #bit CHS1 =0x1F.4 
+.................... #bit CHS0 =0x1F.3 
+.................... #bit ADGO =0x1F.2 
+.................... #bit ADON =0x1F.0 
+....................  
+.................... //----- OPTION_reg Bits -------------------------------------------------------- 
+....................  
+.................... #bit RBPU =0x81.7  
+.................... #bit INTEDG =0x81.6  
+.................... #bit T0CS =0x81.5  
+.................... #bit T0SE =0x81.4  
+.................... #bit PSA =0x81.3  
+.................... #bit PS2 =0x81.2  
+.................... #bit PS1 =0x81.1  
+.................... #bit PS0 =0x81.0  
+....................  
+.................... //------------------TRISA bits--------------------------- 
+....................  
+.................... #bit TRISA5 =0x85.5 
+.................... #bit TRISA4 =0x85.4 
+.................... #bit TRISA3 =0x85.3 
+.................... #bit TRISA2 =0x85.2 
+.................... #bit TRISA1 =0x85.1  
+.................... #bit TRISA0 =0x85.0 
+....................  
+.................... //-----------------TRISB bits----------------------------- 
+....................  
+.................... #bit TRISB7 =0x86.7 
+.................... #bit TRISB6 =0x86.6  
+.................... #bit TRISB5 =0x86.5 
+.................... #bit TRISB4 =0x86.4  
+.................... #bit TRISB3 =0x86.3 
+.................... #bit TRISB2 =0x86.2 
+.................... #bit TRISB1 =0x86.1  
+.................... #bit TRISB0 =0x86.0  
+....................  
+.................... //----------------TRISC bits------------------- 
+....................  
+.................... #bit TRISC7 =0x87.7 
+.................... #bit TRISC6 =0x87.6 
+.................... #bit TRISC5 =0x87.5  
+.................... #bit TRISC4 =0x87.4 
+.................... #bit TRISC3 =0x87.3 
+.................... #bit TRISC2 =0x87.2  
+.................... #bit TRISC1 =0x87.1 
+.................... #bit TRISC0 =0x87.0 
+....................  
+.................... //----- PIE1 Bits ---------------------------------------------------------- 
+....................  
+.................... #bit PSPIE =0x8C.7 
+.................... #bit ADIE =0x8C.6 
+.................... #bit RCIE =0x8C.5  
+.................... #bit TXIE =0x8C.4  
+.................... #bit SSPIE =0x8C.3 
+.................... #bit CCP1IE =0x8C.2  
+.................... #bit TMR2IE =0x8C.1 
+.................... #bit TMR1IE =0x8C.0 
+....................  
+.................... //----- PIE2 Bits ----------------------------------------------------- 
+....................  
+.................... #bit CMIE =0x8D.6 
+.................... #bit EEIE =0x8D.4 
+.................... #bit BCLIE =0x8D.3 
+.................... #bit CCP2IE =0x8D.0 
+....................  
+.................... //----- PCON Bits ---------------------------------------------------------- 
+....................  
+.................... #bit POR =0x8E.1 
+.................... #bit BOD =0x8E.0 
+....................  
+.................... //-----------SSPCON2 bits--------------------------------------------- 
+....................  
+.................... #bit GCEN =0x91.7 
+.................... #bit ACKSTAT =0x91.6 
+.................... #bit ACKDT =0x91.5  
+.................... #bit ACKEN =0x91.4 
+.................... #bit RCEN =0x91.3  
+.................... #bit PEN =0x91.2 
+.................... #bit RSEN =0x91.1 
+.................... #bit SEN =0x91.0  
+....................  
+.................... //---------------------SSPSTAT bits------------------------ 
+....................  
+.................... #bit STAT_SMP =0x94.7 
+.................... #bit STAT_CKE =0x94.6 
+.................... #bit STAT_DA =0x94.5 
+.................... #bit STAT_P =0x94.4 
+.................... #bit STAT_S =0x94.3 
+.................... #bit STAT_RW =0x94.2 
+.................... #bit STAT_UA =0x94.1 
+.................... #bit STAT_BF =0x94.0 
+....................  
+.................... //----------------TXSTA bits----------------- 
+....................  
+.................... #bit CSRC =0x98.7 
+.................... #bit TX9 =0x98.6 
+.................... #bit TXEN =0x98.5  
+.................... #bit SYNC =0x98.4 
+.................... #bit BRGH =0x98.2 
+.................... #bit TRMT =0x98.1 
+.................... #bit TX9D =0x98.0 
+....................  
+.................... //--------------ADCON1 bits--------------- 
+....................  
+.................... #bit ADFM =0x9F.7 
+.................... #bit ADCS2 =0x9F.6 
+.................... #bit PCFG3 =0x9F.3 
+.................... #bit PCFG2 =0x9F.2 
+.................... #bit PCFG1 =0x9F.1  
+.................... #bit PCFG0 =0x9F.0 
+....................  
+.................... //-----------EECON1 bits---------- 
+....................  
+.................... #bit EEPGD =0x018C.7 
+.................... #bit WRERR =0x018C.3 
+.................... #bit WREN =0x018C.2  
+.................... #bit WR =0x018C.1 
+.................... #bit RD =0x018C.0 
+....................  
+.................... #DEFINE     TRIGGER      PIN_b3     //          dinh nghia chan tao xung       
+.................... #DEFINE     ECHO         PIN_b2     //          chan tin hieu 
+....................  
+.................... #define     trg         pin_a4         // trai ngoai 
+.................... #define     trt         pin_a3         // trai trong 
+.................... #define     giua        pin_a2         // giua 
+.................... #define     pht         pin_a1         //Phai trong 
+.................... #define     phg         pin_a0         //phai ngoai 
+....................  
+.................... signed int32    PWM_DUTY;     // chay 0 - 1000 
+.................... //CAC HAM CHO DK DONG CO DC BANG PWM 
+.................... //================================ 
+.................... #DEFINE  MOTOR_ENA0   PIN_c0 
+.................... #DEFINE  MOTOR_ENA1   PIN_d1 
+....................  
+.................... FLOAT KCSA, KCSB;                   // vi doc vao gia tri thuc 
+.................... UNSIGNED INT8  GT_TRAN;        // các khai bao can thiet 
+....................  
+.................... signed int16 kc; 
+....................  
+.................... #int_timer1                         // ngat de do khoang cach liên tuc 
+.................... void interrupt_timer1() 
+.................... { 
+....................    GT_TRAN++;                       //bao tran 
+*
+0031:  INCF   33,F
+0032:  BCF    0C.0
+0033:  BCF    0A.3
+0034:  BCF    0A.4
+0035:  GOTO   01D
+.................... } 
+....................  
+.................... INT1 DCMOTOR_TN;        // tn thuan nghich 
+.................... //CAC HAM CHO DK DONG CO DC BANG PWM 
+.................... //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+.................... VOID DC_MOTOR_KTAO_CCP1_THUAN() 
+.................... {      
+....................       SETUP_CCP2(CCP_OFF);       
+*
+033E:  MOVLW  F0
+033F:  ANDWF  1D,F
+....................       SETUP_CCP1(CCP_PWM); 
+0340:  BCF    07.2
+0341:  MOVLW  0C
+0342:  MOVWF  17
+....................       OUTPUT_LOW(PIN_C1);       
+0343:  BCF    07.1
+.................... } 
+.................... VOID DC_MOTOR_KTAO_CCP2_NGHICH() 
+.................... {             
+....................       SETUP_CCP1(CCP_OFF);       
+*
+0345:  MOVLW  F0
+0346:  ANDWF  17,F
+....................       SETUP_CCP2(CCP_PWM); 
+0347:  BCF    07.1
+0348:  MOVLW  0C
+0349:  MOVWF  1D
+....................       OUTPUT_LOW(PIN_C2); 
+034A:  BCF    07.2
+.................... } 
+.................... VOID DC_MOTOR_KTAO_CCPX_KTAO() 
+.................... {          
+....................      IF (DCMOTOR_TN==1)    DC_MOTOR_KTAO_CCP1_THUAN(); 
+*
+033C:  BTFSS  36.0
+033D:  GOTO   345
+*
+0344:  GOTO   34B
+....................      ELSE                  DC_MOTOR_KTAO_CCP2_NGHICH();             
+*
+034B:  RETURN
+.................... } 
+.................... VOID DC_MOTOR_PWW_SETUP_DUTY() 
+.................... {      
+....................      IF (DCMOTOR_TN==1)    SET_PWM1_DUTY(PWM_DUTY); 
+034C:  BTFSS  36.0
+034D:  GOTO   362
+034E:  MOVF   28,W
+034F:  MOVWF  79
+0350:  MOVF   27,W
+0351:  MOVWF  78
+0352:  RRF    79,F
+0353:  RRF    78,F
+0354:  RRF    79,F
+0355:  RRF    78,F
+0356:  RRF    79,F
+0357:  MOVF   78,W
+0358:  MOVWF  15
+0359:  RRF    79,F
+035A:  RRF    79,W
+035B:  ANDLW  30
+035C:  MOVWF  77
+035D:  MOVF   17,W
+035E:  ANDLW  CF
+035F:  IORWF  77,W
+0360:  MOVWF  17
+0361:  GOTO   375
+....................      ELSE                  SET_PWM2_DUTY(PWM_DUTY);      
+0362:  MOVF   28,W
+0363:  MOVWF  79
+0364:  MOVF   27,W
+0365:  MOVWF  78
+0366:  RRF    79,F
+0367:  RRF    78,F
+0368:  RRF    79,F
+0369:  RRF    78,F
+036A:  RRF    79,F
+036B:  MOVF   78,W
+036C:  MOVWF  1B
+036D:  RRF    79,F
+036E:  RRF    79,W
+036F:  ANDLW  30
+0370:  MOVWF  77
+0371:  MOVF   1D,W
+0372:  ANDLW  CF
+0373:  IORWF  77,W
+0374:  MOVWF  1D
+0375:  RETURN
+.................... }  
+.................... VOID DC_MOTOR_PWM_CCP1_CCP2_STOP() 
+.................... {          
+.................... //!      PWM_DUTY=0;             
+....................       SETUP_CCP1(CCP_OFF); 
+....................       SETUP_CCP2(CCP_OFF); 
+....................       DC_MOTOR_KTAO_CCPX_KTAO(); 
+.................... //!      DC_MOTOR_PWW_SETUP_DUTY(); 
+.................... } 
+....................  
+.................... VOID TAO_XUNG_TRIGGER()       // tao xung de day tin hieu ra ngoai 
+.................... { 
+....................    DELAY_MS(30);              //tao tre 
+*
+0119:  MOVLW  1E
+011A:  MOVWF  37
+011B:  CALL   036
+....................    OUTPUT_HIGH(TRIGGER);      // kich muc cao truoc 
+011C:  BSF    06.3
+....................    DELAY_MS(1);               // cho 1 ti de tao xung 
+011D:  MOVLW  01
+011E:  MOVWF  37
+011F:  CALL   036
+....................    OUTPUT_LOW(TRIGGER);       // kich muc thap thi tao duoc 1 xung 
+0120:  BCF    06.3
+....................     
+....................    SET_TIMER1(0);                // chuong trinh ngat reset ve 0 
+0121:  CLRF   0E
+0122:  CLRF   0F
+0123:  CLRF   0E
+....................    WHILE(!(INPUT(ECHO)));        // ktra chan echo ==1 
+0124:  BTFSS  06.2
+0125:  GOTO   124
+....................    SETUP_TIMER_1(T1_INTERNAL);   // cho phep dem xung timer 
+0126:  MOVLW  85
+0127:  MOVWF  10
+....................     
+....................    WHILE(INPUT(ECHO)==1);           //het du lieu echo = 0 
+0128:  BTFSC  06.2
+0129:  GOTO   128
+....................    KCSA = GET_TIMER1();          // doc gia tri timer 
+012A:  MOVF   0F,W
+012B:  MOVWF  7A
+012C:  MOVF   0E,W
+012D:  MOVWF  77
+012E:  MOVF   0F,W
+012F:  SUBWF  7A,W
+0130:  BTFSS  03.2
+0131:  GOTO   12A
+0132:  MOVF   77,W
+0133:  MOVWF  37
+0134:  MOVF   7A,W
+0135:  MOVWF  38
+*
+0152:  MOVF   7A,W
+0153:  MOVWF  2E
+0154:  MOVF   79,W
+0155:  MOVWF  2D
+0156:  MOVF   78,W
+0157:  MOVWF  2C
+0158:  MOVF   77,W
+0159:  MOVWF  2B
+....................    SETUP_TIMER_1(T1_DISABLED);   // khong cho doc gia tri timer 
+015A:  CLRF   10
+.................... } 
+....................  
+.................... VOID DOC_KHOANG_CACH() 
+.................... { 
+....................    GT_TRAN=0;              //bao gia tri tran 
+*
+0118:  CLRF   33
+....................    TAO_XUNG_TRIGGER();     // khi tran thi doc gia tri 
+....................    KCSB = KCSA +GT_TRAN*65536;         // cách tinh là công tong cac gia tri lai 
+*
+015B:  MOVF   33,W
+015C:  MOVWF  77
+015D:  CLRF   78
+015E:  CLRF   79
+015F:  CLRF   7A
+0160:  MOVF   78,W
+0161:  MOVWF  7A
+0162:  MOVF   77,W
+0163:  MOVWF  79
+0164:  CLRF   77
+0165:  CLRF   78
+0166:  MOVF   7A,W
+0167:  MOVWF  3A
+0168:  MOVF   79,W
+0169:  MOVWF  39
+016A:  MOVF   78,W
+016B:  MOVWF  38
+016C:  MOVF   77,W
+016D:  MOVWF  37
+*
+0188:  BCF    03.1
+0189:  MOVF   2E,W
+018A:  MOVWF  3A
+018B:  MOVF   2D,W
+018C:  MOVWF  39
+018D:  MOVF   2C,W
+018E:  MOVWF  38
+018F:  MOVF   2B,W
+0190:  MOVWF  37
+0191:  MOVF   7A,W
+0192:  MOVWF  3E
+0193:  MOVF   79,W
+0194:  MOVWF  3D
+0195:  MOVF   78,W
+0196:  MOVWF  3C
+0197:  MOVF   77,W
+0198:  MOVWF  3B
+*
+02D9:  MOVF   7A,W
+02DA:  MOVWF  32
+02DB:  MOVF   79,W
+02DC:  MOVWF  31
+02DD:  MOVF   78,W
+02DE:  MOVWF  30
+02DF:  MOVF   77,W
+02E0:  MOVWF  2F
+....................     
+....................    KCSB = KCSB/5;             //  chuyen sang thoi gian uS 
+02E1:  MOVF   32,W
+02E2:  MOVWF  3A
+02E3:  MOVF   31,W
+02E4:  MOVWF  39
+02E5:  MOVF   30,W
+02E6:  MOVWF  38
+02E7:  MOVF   2F,W
+02E8:  MOVWF  37
+02E9:  CLRF   3E
+02EA:  CLRF   3D
+02EB:  MOVLW  20
+02EC:  MOVWF  3C
+02ED:  MOVLW  81
+02EE:  MOVWF  3B
+02EF:  CALL   04E
+02F0:  MOVF   7A,W
+02F1:  MOVWF  32
+02F2:  MOVF   79,W
+02F3:  MOVWF  31
+02F4:  MOVF   78,W
+02F5:  MOVWF  30
+02F6:  MOVF   77,W
+02F7:  MOVWF  2F
+....................    KCSB = (KCSB/58);          // chia  de chuyen sang don vi cm 
+02F8:  MOVF   32,W
+02F9:  MOVWF  3A
+02FA:  MOVF   31,W
+02FB:  MOVWF  39
+02FC:  MOVF   30,W
+02FD:  MOVWF  38
+02FE:  MOVF   2F,W
+02FF:  MOVWF  37
+0300:  CLRF   3E
+0301:  CLRF   3D
+0302:  MOVLW  68
+0303:  MOVWF  3C
+0304:  MOVLW  84
+0305:  MOVWF  3B
+0306:  CALL   04E
+0307:  MOVF   7A,W
+0308:  MOVWF  32
+0309:  MOVF   79,W
+030A:  MOVWF  31
+030B:  MOVF   78,W
+030C:  MOVWF  30
+030D:  MOVF   77,W
+030E:  MOVWF  2F
+....................    kc=kcsb; 
+030F:  MOVF   32,W
+0310:  MOVWF  3A
+0311:  MOVF   31,W
+0312:  MOVWF  39
+0313:  MOVF   30,W
+0314:  MOVWF  38
+0315:  MOVF   2F,W
+0316:  MOVWF  37
+*
+0335:  MOVF   79,W
+0336:  MOVWF  35
+0337:  MOVF   78,W
+0338:  MOVWF  34
+0339:  BCF    0A.3
+033A:  BCF    0A.4
+033B:  GOTO   56B (RETURN)
+.................... } 
+....................  
+.................... void chay_line() 
+.................... { 
+....................    if((input(trg)==0)&&(input(trt)==0)&&(input(giua)==1)&&(input(pht)==0)&&(input(phg)==0))                 // 00100 
+*
+0376:  BSF    03.5
+0377:  BSF    05.4
+0378:  BCF    03.5
+0379:  BTFSC  05.4
+037A:  GOTO   39B
+037B:  BSF    03.5
+037C:  BSF    05.3
+037D:  BCF    03.5
+037E:  BTFSC  05.3
+037F:  GOTO   39B
+0380:  BSF    03.5
+0381:  BSF    05.2
+0382:  BCF    03.5
+0383:  BTFSS  05.2
+0384:  GOTO   39B
+0385:  BSF    03.5
+0386:  BSF    05.1
+0387:  BCF    03.5
+0388:  BTFSC  05.1
+0389:  GOTO   39B
+038A:  BSF    03.5
+038B:  BSF    05.0
+038C:  BCF    03.5
+038D:  BTFSC  05.0
+038E:  GOTO   39B
+....................    { 
+....................        PWM_DUTY=500; 
+038F:  CLRF   2A
+0390:  CLRF   29
+0391:  MOVLW  01
+0392:  MOVWF  28
+0393:  MOVLW  F4
+0394:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+0395:  BSF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+0396:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+0397:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+0398:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+0399:  CALL   34C
+....................    } 
+039A:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==1)&&(input(giua)==1)&&(input(pht)==0)&&(input(phg)==0))         // 01100 
+039B:  BSF    03.5
+039C:  BSF    05.4
+039D:  BCF    03.5
+039E:  BTFSC  05.4
+039F:  GOTO   3C0
+03A0:  BSF    03.5
+03A1:  BSF    05.3
+03A2:  BCF    03.5
+03A3:  BTFSS  05.3
+03A4:  GOTO   3C0
+03A5:  BSF    03.5
+03A6:  BSF    05.2
+03A7:  BCF    03.5
+03A8:  BTFSS  05.2
+03A9:  GOTO   3C0
+03AA:  BSF    03.5
+03AB:  BSF    05.1
+03AC:  BCF    03.5
+03AD:  BTFSC  05.1
+03AE:  GOTO   3C0
+03AF:  BSF    03.5
+03B0:  BSF    05.0
+03B1:  BCF    03.5
+03B2:  BTFSC  05.0
+03B3:  GOTO   3C0
+....................    { 
+....................        PWM_DUTY=400; 
+03B4:  CLRF   2A
+03B5:  CLRF   29
+03B6:  MOVLW  01
+03B7:  MOVWF  28
+03B8:  MOVLW  90
+03B9:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+03BA:  BSF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+03BB:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+03BC:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+03BD:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+03BE:  CALL   34C
+....................    } 
+03BF:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==0)&&(input(giua)==1)&&(input(pht)==1)&&(input(phg)==0))      //  00110 
+03C0:  BSF    03.5
+03C1:  BSF    05.4
+03C2:  BCF    03.5
+03C3:  BTFSC  05.4
+03C4:  GOTO   3E5
+03C5:  BSF    03.5
+03C6:  BSF    05.3
+03C7:  BCF    03.5
+03C8:  BTFSC  05.3
+03C9:  GOTO   3E5
+03CA:  BSF    03.5
+03CB:  BSF    05.2
+03CC:  BCF    03.5
+03CD:  BTFSS  05.2
+03CE:  GOTO   3E5
+03CF:  BSF    03.5
+03D0:  BSF    05.1
+03D1:  BCF    03.5
+03D2:  BTFSS  05.1
+03D3:  GOTO   3E5
+03D4:  BSF    03.5
+03D5:  BSF    05.0
+03D6:  BCF    03.5
+03D7:  BTFSC  05.0
+03D8:  GOTO   3E5
+....................    { 
+....................        PWM_DUTY=400; 
+03D9:  CLRF   2A
+03DA:  CLRF   29
+03DB:  MOVLW  01
+03DC:  MOVWF  28
+03DD:  MOVLW  90
+03DE:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+03DF:  BSF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+03E0:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+03E1:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+03E2:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+03E3:  CALL   34C
+....................    } 
+03E4:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==1)&&(input(giua)==1)&&(input(pht)==1)&&(input(phg)==0))         //01110 
+03E5:  BSF    03.5
+03E6:  BSF    05.4
+03E7:  BCF    03.5
+03E8:  BTFSC  05.4
+03E9:  GOTO   40A
+03EA:  BSF    03.5
+03EB:  BSF    05.3
+03EC:  BCF    03.5
+03ED:  BTFSS  05.3
+03EE:  GOTO   40A
+03EF:  BSF    03.5
+03F0:  BSF    05.2
+03F1:  BCF    03.5
+03F2:  BTFSS  05.2
+03F3:  GOTO   40A
+03F4:  BSF    03.5
+03F5:  BSF    05.1
+03F6:  BCF    03.5
+03F7:  BTFSS  05.1
+03F8:  GOTO   40A
+03F9:  BSF    03.5
+03FA:  BSF    05.0
+03FB:  BCF    03.5
+03FC:  BTFSC  05.0
+03FD:  GOTO   40A
+....................    { 
+....................        PWM_DUTY=400; 
+03FE:  CLRF   2A
+03FF:  CLRF   29
+0400:  MOVLW  01
+0401:  MOVWF  28
+0402:  MOVLW  90
+0403:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+0404:  BSF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+0405:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+0406:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+0407:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+0408:  CALL   34C
+....................    } 
+0409:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==1)&&(input(giua)==0)&&(input(pht)==0)&&(input(phg)==0))         //01000 
+040A:  BSF    03.5
+040B:  BSF    05.4
+040C:  BCF    03.5
+040D:  BTFSC  05.4
+040E:  GOTO   42F
+040F:  BSF    03.5
+0410:  BSF    05.3
+0411:  BCF    03.5
+0412:  BTFSS  05.3
+0413:  GOTO   42F
+0414:  BSF    03.5
+0415:  BSF    05.2
+0416:  BCF    03.5
+0417:  BTFSC  05.2
+0418:  GOTO   42F
+0419:  BSF    03.5
+041A:  BSF    05.1
+041B:  BCF    03.5
+041C:  BTFSC  05.1
+041D:  GOTO   42F
+041E:  BSF    03.5
+041F:  BSF    05.0
+0420:  BCF    03.5
+0421:  BTFSC  05.0
+0422:  GOTO   42F
+....................    { 
+....................        PWM_DUTY=400; 
+0423:  CLRF   2A
+0424:  CLRF   29
+0425:  MOVLW  01
+0426:  MOVWF  28
+0427:  MOVLW  90
+0428:  MOVWF  27
+....................        OUTPUT_low(MOTOR_ENA0);        // phai 
+0429:  BCF    07.0
+....................        OUTPUT_high(MOTOR_ENA1);        // trai 
+042A:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+042B:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+042C:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+042D:  CALL   34C
+....................    } 
+042E:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==0)&&(input(giua)==0)&&(input(pht)==1)&&(input(phg)==0))         //00010 
+042F:  BSF    03.5
+0430:  BSF    05.4
+0431:  BCF    03.5
+0432:  BTFSC  05.4
+0433:  GOTO   454
+0434:  BSF    03.5
+0435:  BSF    05.3
+0436:  BCF    03.5
+0437:  BTFSC  05.3
+0438:  GOTO   454
+0439:  BSF    03.5
+043A:  BSF    05.2
+043B:  BCF    03.5
+043C:  BTFSC  05.2
+043D:  GOTO   454
+043E:  BSF    03.5
+043F:  BSF    05.1
+0440:  BCF    03.5
+0441:  BTFSS  05.1
+0442:  GOTO   454
+0443:  BSF    03.5
+0444:  BSF    05.0
+0445:  BCF    03.5
+0446:  BTFSC  05.0
+0447:  GOTO   454
+....................    { 
+....................        PWM_DUTY=400; 
+0448:  CLRF   2A
+0449:  CLRF   29
+044A:  MOVLW  01
+044B:  MOVWF  28
+044C:  MOVLW  90
+044D:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+044E:  BSF    07.0
+....................        OUTPUT_low(MOTOR_ENA1); 
+044F:  BCF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+0450:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+0451:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+0452:  CALL   34C
+....................    } 
+0453:  GOTO   543
+....................    else if((input(trg)==1)&&(input(trt)==1)&&(input(giua)==0)&&(input(pht)==0)&&(input(phg)==0))         //11000 
+0454:  BSF    03.5
+0455:  BSF    05.4
+0456:  BCF    03.5
+0457:  BTFSS  05.4
+0458:  GOTO   479
+0459:  BSF    03.5
+045A:  BSF    05.3
+045B:  BCF    03.5
+045C:  BTFSS  05.3
+045D:  GOTO   479
+045E:  BSF    03.5
+045F:  BSF    05.2
+0460:  BCF    03.5
+0461:  BTFSC  05.2
+0462:  GOTO   479
+0463:  BSF    03.5
+0464:  BSF    05.1
+0465:  BCF    03.5
+0466:  BTFSC  05.1
+0467:  GOTO   479
+0468:  BSF    03.5
+0469:  BSF    05.0
+046A:  BCF    03.5
+046B:  BTFSC  05.0
+046C:  GOTO   479
+....................    { 
+....................        PWM_DUTY=400; 
+046D:  CLRF   2A
+046E:  CLRF   29
+046F:  MOVLW  01
+0470:  MOVWF  28
+0471:  MOVLW  90
+0472:  MOVWF  27
+....................        OUTPUT_low(MOTOR_ENA0);        // bat 2 dong  co 
+0473:  BCF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+0474:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+0475:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+0476:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+0477:  CALL   34C
+....................    } 
+0478:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==0)&&(input(giua)==0)&&(input(pht)==1)&&(input(phg)==1))         //00011 
+0479:  BSF    03.5
+047A:  BSF    05.4
+047B:  BCF    03.5
+047C:  BTFSC  05.4
+047D:  GOTO   49E
+047E:  BSF    03.5
+047F:  BSF    05.3
+0480:  BCF    03.5
+0481:  BTFSC  05.3
+0482:  GOTO   49E
+0483:  BSF    03.5
+0484:  BSF    05.2
+0485:  BCF    03.5
+0486:  BTFSC  05.2
+0487:  GOTO   49E
+0488:  BSF    03.5
+0489:  BSF    05.1
+048A:  BCF    03.5
+048B:  BTFSS  05.1
+048C:  GOTO   49E
+048D:  BSF    03.5
+048E:  BSF    05.0
+048F:  BCF    03.5
+0490:  BTFSS  05.0
+0491:  GOTO   49E
+....................    { 
+....................        PWM_DUTY=400; 
+0492:  CLRF   2A
+0493:  CLRF   29
+0494:  MOVLW  01
+0495:  MOVWF  28
+0496:  MOVLW  90
+0497:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+0498:  BSF    07.0
+....................        OUTPUT_low(MOTOR_ENA1); 
+0499:  BCF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+049A:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+049B:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+049C:  CALL   34C
+....................    } 
+049D:  GOTO   543
+....................    else if((input(trg)==1)&&(input(trt)==0)&&(input(giua)==0)&&(input(pht)==0)&&(input(phg)==0))         //10000 
+049E:  BSF    03.5
+049F:  BSF    05.4
+04A0:  BCF    03.5
+04A1:  BTFSS  05.4
+04A2:  GOTO   4C3
+04A3:  BSF    03.5
+04A4:  BSF    05.3
+04A5:  BCF    03.5
+04A6:  BTFSC  05.3
+04A7:  GOTO   4C3
+04A8:  BSF    03.5
+04A9:  BSF    05.2
+04AA:  BCF    03.5
+04AB:  BTFSC  05.2
+04AC:  GOTO   4C3
+04AD:  BSF    03.5
+04AE:  BSF    05.1
+04AF:  BCF    03.5
+04B0:  BTFSC  05.1
+04B1:  GOTO   4C3
+04B2:  BSF    03.5
+04B3:  BSF    05.0
+04B4:  BCF    03.5
+04B5:  BTFSC  05.0
+04B6:  GOTO   4C3
+....................    { 
+....................        PWM_DUTY=400; 
+04B7:  CLRF   2A
+04B8:  CLRF   29
+04B9:  MOVLW  01
+04BA:  MOVWF  28
+04BB:  MOVLW  90
+04BC:  MOVWF  27
+....................        OUTPUT_low(MOTOR_ENA0);        // bat 2 dong  co 
+04BD:  BCF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+04BE:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+04BF:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+04C0:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+04C1:  CALL   34C
+....................    } 
+04C2:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==0)&&(input(giua)==0)&&(input(pht)==0)&&(input(phg)==1))         //00001 
+04C3:  BSF    03.5
+04C4:  BSF    05.4
+04C5:  BCF    03.5
+04C6:  BTFSC  05.4
+04C7:  GOTO   4E8
+04C8:  BSF    03.5
+04C9:  BSF    05.3
+04CA:  BCF    03.5
+04CB:  BTFSC  05.3
+04CC:  GOTO   4E8
+04CD:  BSF    03.5
+04CE:  BSF    05.2
+04CF:  BCF    03.5
+04D0:  BTFSC  05.2
+04D1:  GOTO   4E8
+04D2:  BSF    03.5
+04D3:  BSF    05.1
+04D4:  BCF    03.5
+04D5:  BTFSC  05.1
+04D6:  GOTO   4E8
+04D7:  BSF    03.5
+04D8:  BSF    05.0
+04D9:  BCF    03.5
+04DA:  BTFSS  05.0
+04DB:  GOTO   4E8
+....................    { 
+....................        PWM_DUTY=400; 
+04DC:  CLRF   2A
+04DD:  CLRF   29
+04DE:  MOVLW  01
+04DF:  MOVWF  28
+04E0:  MOVLW  90
+04E1:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+04E2:  BSF    07.0
+....................        OUTPUT_low(MOTOR_ENA1); 
+04E3:  BCF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+04E4:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+04E5:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+04E6:  CALL   34C
+....................    } 
+04E7:  GOTO   543
+....................    else if((input(trg)==0)&&(input(trt)==0)&&(input(giua)==1)&&(input(pht)==1)&&(input(phg)==1))         //01111 
+04E8:  BSF    03.5
+04E9:  BSF    05.4
+04EA:  BCF    03.5
+04EB:  BTFSC  05.4
+04EC:  GOTO   510
+04ED:  BSF    03.5
+04EE:  BSF    05.3
+04EF:  BCF    03.5
+04F0:  BTFSC  05.3
+04F1:  GOTO   510
+04F2:  BSF    03.5
+04F3:  BSF    05.2
+04F4:  BCF    03.5
+04F5:  BTFSS  05.2
+04F6:  GOTO   510
+04F7:  BSF    03.5
+04F8:  BSF    05.1
+04F9:  BCF    03.5
+04FA:  BTFSS  05.1
+04FB:  GOTO   510
+04FC:  BSF    03.5
+04FD:  BSF    05.0
+04FE:  BCF    03.5
+04FF:  BTFSS  05.0
+0500:  GOTO   510
+....................    { 
+....................        PWM_DUTY=600; 
+0501:  CLRF   2A
+0502:  CLRF   29
+0503:  MOVLW  02
+0504:  MOVWF  28
+0505:  MOVLW  58
+0506:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+0507:  BSF    07.0
+....................        OUTPUT_low(MOTOR_ENA1); 
+0508:  BCF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+0509:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+050A:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+050B:  CALL   34C
+....................        delay_ms(100); 
+050C:  MOVLW  64
+050D:  MOVWF  37
+050E:  CALL   036
+....................    } 
+050F:  GOTO   543
+....................    else if((input(trg)==1)&&(input(trt)==1)&&(input(giua)==1)&&(input(pht)==0)&&(input(phg)==0))         //11110 
+0510:  BSF    03.5
+0511:  BSF    05.4
+0512:  BCF    03.5
+0513:  BTFSS  05.4
+0514:  GOTO   538
+0515:  BSF    03.5
+0516:  BSF    05.3
+0517:  BCF    03.5
+0518:  BTFSS  05.3
+0519:  GOTO   538
+051A:  BSF    03.5
+051B:  BSF    05.2
+051C:  BCF    03.5
+051D:  BTFSS  05.2
+051E:  GOTO   538
+051F:  BSF    03.5
+0520:  BSF    05.1
+0521:  BCF    03.5
+0522:  BTFSC  05.1
+0523:  GOTO   538
+0524:  BSF    03.5
+0525:  BSF    05.0
+0526:  BCF    03.5
+0527:  BTFSC  05.0
+0528:  GOTO   538
+....................    { 
+....................        PWM_DUTY=600; 
+0529:  CLRF   2A
+052A:  CLRF   29
+052B:  MOVLW  02
+052C:  MOVWF  28
+052D:  MOVLW  58
+052E:  MOVWF  27
+....................        OUTPUT_low(MOTOR_ENA0);        // bat 2 dong  co 
+052F:  BCF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+0530:  BSF    08.1
+....................        DCMOTOR_TN=0;                   // = 1 quay thuan 
+0531:  BCF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+0532:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+0533:  CALL   34C
+....................        delay_ms(100); 
+0534:  MOVLW  64
+0535:  MOVWF  37
+0536:  CALL   036
+....................    } 
+0537:  GOTO   543
+....................    else 
+....................    { 
+....................        PWM_DUTY=400; 
+0538:  CLRF   2A
+0539:  CLRF   29
+053A:  MOVLW  01
+053B:  MOVWF  28
+053C:  MOVLW  90
+053D:  MOVWF  27
+....................        OUTPUT_high(MOTOR_ENA0);        // bat 2 dong  co 
+053E:  BSF    07.0
+....................        OUTPUT_high(MOTOR_ENA1); 
+053F:  BSF    08.1
+....................        DCMOTOR_TN=1;                   // = 1 quay thuan 
+0540:  BSF    36.0
+....................        DC_MOTOR_KTAO_CCPX_KTAO();      // khoi tao quay  
+0541:  CALL   33C
+....................        DC_MOTOR_PWW_SETUP_DUTY();      // khoi tao toc do quay 
+0542:  CALL   34C
+....................    } 
+0543:  BCF    0A.3
+0544:  BCF    0A.4
+0545:  GOTO   575 (RETURN)
+.................... } 
+.................... VOID MAIN() 
+0546:  MOVF   03,W
+0547:  ANDLW  1F
+0548:  MOVWF  03
+0549:  BSF    03.5
+054A:  BSF    1F.0
+054B:  BSF    1F.1
+054C:  BSF    1F.2
+054D:  BCF    1F.3
+054E:  MOVLW  07
+054F:  MOVWF  1C
+0550:  BCF    03.7
+.................... {   
+....................     SET_TRIS_D(0X00);      // khoi tao cac port ra nen cho bang 0 
+0551:  MOVLW  00
+0552:  MOVWF  08
+....................     SET_TRIS_C(0X00); 
+0553:  MOVWF  07
+....................     SET_TRIS_A(0Xff);     // vi chan AN0 vao nen cho len 1 con lai ve 0 
+0554:  MOVLW  FF
+0555:  MOVWF  05
+....................     SET_TRIS_E(0Xff); 
+0556:  BSF    09.0
+0557:  BSF    09.1
+0558:  BSF    09.2
+....................     SET_TRIS_B(0X00); 
+0559:  MOVLW  00
+055A:  MOVWF  06
+....................  
+....................     SETUP_TIMER_1(T1_DISABLED);       //tat timer1 
+055B:  BCF    03.5
+055C:  CLRF   10
+....................     ENABLE_INTERRUPTS(GLOBAL);        // cho phép ngat 
+055D:  MOVLW  C0
+055E:  IORWF  0B,F
+....................     ENABLE_INTERRUPTS(INT_TIMER1);           // cho phep ngat timer 1 
+055F:  BSF    03.5
+0560:  BSF    0C.0
+....................                    // khoi tao LCD 
+.................... //!     
+....................     SETUP_TIMER_2(T2_DIV_BY_16,249,1);       //  
+0561:  MOVLW  00
+0562:  MOVWF  78
+0563:  IORLW  06
+0564:  BCF    03.5
+0565:  MOVWF  12
+0566:  MOVLW  F9
+0567:  BSF    03.5
+0568:  MOVWF  12
+....................      
+.................... //!    OUTPUT_HIGH(MOTOR_ENA0); 
+.................... //!    OUTPUT_HIGH(MOTOR_ENA1); 
+.................... //!    PWM_DUTY=1000; 
+.................... //!    SETUP_CCP1(CCP_OFF);       
+.................... //!    SETUP_CCP2(CCP_PWM);     
+.................... //!    SET_PWM2_DUTY(PWM_DUTY); 
+....................     WHILE(TRUE) 
+....................     { 
+....................          DOC_KHOANG_CACH(); 
+0569:  BCF    03.5
+056A:  GOTO   118
+....................          if(kc>10)          
+056B:  BTFSC  35.7
+056C:  GOTO   577
+056D:  MOVF   35,F
+056E:  BTFSS  03.2
+056F:  GOTO   574
+0570:  MOVF   34,W
+0571:  SUBLW  0A
+0572:  BTFSC  03.0
+0573:  GOTO   577
+....................          { 
+....................             chay_line(); 
+0574:  GOTO   376
+....................             output_low(pin_b0); 
+0575:  BCF    06.0
+....................          } 
+0576:  GOTO   57A
+....................          else         
+....................          { 
+....................              OUTPUT_low(MOTOR_ENA0);        // bat 2 dong  co 
+0577:  BCF    07.0
+....................              OUTPUT_low(MOTOR_ENA1);   
+0578:  BCF    08.1
+....................              output_high(pin_b0); 
+0579:  BSF    06.0
+....................          } 
+057A:  GOTO   56A
+....................     } 
+.................... } 
+....................  
+057B:  GOTO   57B
+....................  
+
+Configuration Fuses:
+   Word  1: 373A   HS NOWDT NOPUT NOBROWNOUT NOLVP NOCPD NOWRT DEBUG NOPROTECT
+
+   Some fuses have been forced to be compatible with the ICD debugger.

@@ -1,0 +1,57 @@
+ÀÄProject3
+   ÃÄMAIN  0/54  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄDOC_KHOANG_CACH  0/548  Ram=0
+   ³  ³  ÃÄTAO_XUNG_TRIGGER  (Inline)  Ram=1
+   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=1
+   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=1
+   ³  ³  ³  ÀÄ@ITOF  (Inline)  Ram=2
+   ³  ³  ÃÄ@DTOF  (Inline)  Ram=4
+   ³  ³  ÃÄ@ADDFF  (Inline)  Ram=16
+   ³  ³  ÃÄ@DIVFF  0/202  Ram=14
+   ³  ³  ÃÄ@DIVFF  0/202  Ram=14
+   ³  ³  ÀÄ@SFTOI  (Inline)  Ram=4
+   ³  ÀÄchay_line  0/464  Ram=5
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÃÄDC_MOTOR_KTAO_CCP1_THUAN  (Inline)  Ram=0
+   ³     ³  ÀÄDC_MOTOR_KTAO_CCP2_NGHICH  (Inline)  Ram=0
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄ@delay_ms1  0/24  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÃÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ³     ÃÄ@delay_ms1  0/24  Ram=1
+   ³     ÃÄDC_MOTOR_KTAO_CCPX_KTAO  0/16  Ram=1
+   ³     ³  ÀÄ*
+   ³     ÀÄDC_MOTOR_PWW_SETUP_DUTY  0/42  Ram=1
+   ÀÄinterrupt_timer1  0/5  Ram=0
