@@ -15,3 +15,5 @@ Khi đó led thu sẽ nhận được tia từ led phát nhờ phản xạ lên 
 Khi không có vạch thì IR nhận sẽ nhận được tín hiệu từ IR phát  
 ![Khi có vạch](https://hackster.imgix.net/uploads/attachments/496035/Concept-of-Black-Line-Follo.gif?auto=compress&gifq=35&w=1280&h=960&fit=max)  
 Khi có vạch IR nhận không nhận được tín hiệu từ IR phát
+# Demo 
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
