@@ -3,7 +3,8 @@ Robocar is following black line
 # Mô tả 
 Thực hiện được những yêu cầu sau:  
 - Xe chạy đúng theo đường vạch kẻ  
-- Tăng tốc độ của xe mà không bị văng khỏi đường đi
+- Tăng tốc độ của xe mà không bị văng khỏi đường đi  
+- Dừng lại khi có vật cản.
 # Nguyên lý hoạt động:   
 Robocar dò đường sẽ di chuyển theo vạch màu(đen – trắng) nhờ các cảm biến hồng ngoại phát hiện vật cản. 
 Dựa vào nguyên lý phạn xạ của tia hồng ngoại do led phát(IR transmitter) phát ra, 
