@@ -24,6 +24,6 @@ Xe có thể dừng lại khi gặp vật cản:
 
 # Demo
 
-Click vào Ảnh để xem demo - >> https://youtu.be/d63bywc6ar8  
+Click vào link để xem demo - >> https://youtu.be/d63bywc6ar8  
 
 [![Watch the video](https://user-images.githubusercontent.com/67089995/176743694-0d32e567-f0b3-44de-84c1-7b63ee6d9949.png)](https://youtu.be/d63bywc6ar8)
