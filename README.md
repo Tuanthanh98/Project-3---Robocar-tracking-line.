@@ -4,7 +4,15 @@ Robocar is following black line
 Thực hiện được những yêu cầu sau:  
 - Xe chạy đúng theo đường vạch kẻ  
 - Tăng tốc độ của xe mà không bị văng khỏi đường đi  
-- Dừng lại khi có vật cản.
+- Dừng lại khi có vật cản. 
+
+# Linh kiện sử dụng
+ - Vi điều khiển Pic16f877a
+ - Cảm biến thu-phát hồng ngoại (5 cặp led )
+ - Module Cảm biến HC-SR04
+ - Module điều khiển động cơ DC L298.
+ - Động cơ dc 12v x2
+ 
 # Nguyên lý hoạt động:   
 Robocar dò đường sẽ di chuyển theo vạch màu(đen – trắng) nhờ các cảm biến hồng ngoại phát hiện vật cản. 
 Dựa vào nguyên lý phạn xạ của tia hồng ngoại do led phát(IR transmitter) phát ra, 
